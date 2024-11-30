@@ -4,7 +4,7 @@ branding:
   icon: 'briefcase'
   color: 'blue'
 inputs:
-  directories:  # Change this
+  directories:
     description: 'Directories to look for files'
     default: .
 runs:
