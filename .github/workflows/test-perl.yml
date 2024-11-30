@@ -25,5 +25,5 @@ jobs:
       - name: Regular tests with ${{ matrix.version }}
         env:
           PERL_VERSION: ${{ matrix.version }}
-        run: echo $PERL_VERSION && prove --exec 'perl -Mv$(PERL_VERSION)' -lv t/
+        run: echo $PERL_VERSION && prove --exec "perl -Mv$PERL_VERSION" -lv t/
 
