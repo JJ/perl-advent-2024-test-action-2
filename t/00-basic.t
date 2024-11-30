@@ -3,7 +3,7 @@
 use lib qw(lib ../lib);
 use Markdowner qw(headerOK);
 
-use Test2::V0;
+use Test2::Bundle::More;
 
 for my $str ( ("# Yes", "#    FOO", "# Bar" )) {
   ok( headerOK( $str ), "«$str» is OK" );
