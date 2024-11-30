@@ -8,5 +8,5 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v4
-    - id: Run over this repo
+    - name: Run over this repo
       uses: ./
