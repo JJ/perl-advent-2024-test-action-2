@@ -1,4 +1,4 @@
-name: CI
+name: Perl tests
 
 on:
   push:
@@ -18,11 +18,11 @@ jobs:
           - '5.34'
           - '5.30'
 
-    name: Test perl v${{ matrix.perl-version }}
+    name: Test perl v${{ matrix.version }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Regular tests
+      - name: Regular tests with ${{ matrix.version }}
         env:
           PERL_VERSION: ${{ matrix.version }}
         run: prove --exec 'perl -Mv${PERL_VERSION}' -lv t/
