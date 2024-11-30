@@ -23,5 +23,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Regular tests
-        run: prove -lv t/
+        env:
+          PERL_VERSION: ${{ matrix.perl-version }}
+        run: prove --exec 'perl -M${PERL_VERSION}' -lv t/
 
