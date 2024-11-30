@@ -1,7 +1,5 @@
 # -*- mode:cperl -*-
 
-use v5.36; # for signatures
-
 use lib qw(lib ../lib);
 use Markdowner qw(headerOK);
 

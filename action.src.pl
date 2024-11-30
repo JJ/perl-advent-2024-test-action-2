@@ -1,13 +1,16 @@
 #!/usr/bin/env perl
 
-use v5.14;
+use feature 'signatures';
 
 use lib qw(lib);
 
-use Action qw(getRef);
+use Markdowner qw(headerOK);
 
-my $ref= getRef();
+my @directories = split(" ", $ENV{'DIRS'});
 
-say "Ref is $ref";
+for my $dir (@directories) {
+  my @markdownFiles = glob("$dir/*.md");
+  
+}
 
 exit(1) unless $ref;
