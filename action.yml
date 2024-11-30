@@ -4,20 +4,13 @@ branding:
   icon: 'briefcase'
   color: 'blue'
 inputs:
-  template-input:  # Change this
-    description: 'What it is about'
-    required: false # or not
-    default: 'World'
+  directories:  # Change this
+    description: 'Directories to look for files'
+    required: true
+    default: .
 runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4
-    - run: print %ENV;
-      shell: perl {0}
-    - name: Print input
-      env:
-        TEMPLATE_INPUT: ${{ inputs.template-input}}
-      run: print $ENV{'TEMPLATE_INPUT'}
-      shell: perl {0}
     - run: ${GITHUB_ACTION_PATH}/action.pl
       shell: bash
