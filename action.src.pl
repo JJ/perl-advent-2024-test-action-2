@@ -6,18 +6,18 @@ use feature 'signatures';
 use lib qw(lib);
 
 use Markdowner qw(headerOK);
-use Github::Actions;
+use GitHub::Actions;
 
 
 my @directories = split(" ", $ENV{'DIRS'});
 
-start_group;
+start_group("Markdown headers");
 for my $dir (@directories) {
   my @markdownFiles = glob("$dir/*.md");
   for my $mdFile (@markdownFiles) {
     open my $mdfh, "<", $mdFile;
     my $firstLine = <$mdfh>;
-    close my $mdfh;
+    close $mdfh;
     chop( $firstLine );
     if ( headerOK( $firstLine ) ) {
       debug "«$firstLine» is proper markdown ho, ho, ho";
