@@ -21,7 +21,10 @@ jobs:
     name: Test perl v${{ matrix.version }}
     steps:
       - uses: actions/checkout@v4
-
+      - name: Find perls
+        run: |
+          ls /usr/bin/perl*
+          perlbrew available
       - name: Regular tests with ${{ matrix.version }}
         env:
           PERL_VERSION: ${{ matrix.version }}
