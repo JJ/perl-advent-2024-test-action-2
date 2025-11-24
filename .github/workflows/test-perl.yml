@@ -20,7 +20,7 @@ jobs:
 
     name: Test perl v${{ matrix.version }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Regular tests with ${{ matrix.version }}
         env:
